@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Google 地圖碳排計算 | Google Maps CO2",
+  "version": "0.1.0",
+  "description": "距離/乘客數/係數與速度估算，顯示 pkm 與 CO2e，支援 CSV 與截圖",
+  "permissions": ["activeTab", "tabs", "storage", "downloads", "scripting"],
+  "host_permissions": [
+    "<all_urls>",
+    "https://www.google.com/*",
+    "https://maps.google.com/*",
+    "https://www.google.com.tw/*",
+    "https://maps.google.com.tw/*"
+  ],
+  "background": {"service_worker": "background.js"},
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/maps/*",
+        "https://maps.google.com/*",
+        "https://www.google.com.tw/maps/*",
+        "https://maps.google.com.tw/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

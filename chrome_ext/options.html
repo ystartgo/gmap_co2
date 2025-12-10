@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>CO2 係數設定</title>
+  <style>
+    body{font-family:system-ui;margin:16px}
+    .row{display:flex;gap:8px;align-items:center;margin:8px 0}
+    label{width:120px}
+    input{width:120px}
+    button{padding:6px 10px}
+  </style>
+  <script src="options.js"></script>
+</head>
+<body>
+  <div class="row"><label>捷運</label><input id="metro" type="number" step="0.0001"/></div>
+  <div class="row"><label>公車</label><input id="bus" type="number" step="0.0001"/></div>
+  <div class="row"><label>汽車</label><input id="car" type="number" step="0.0001"/></div>
+  <div class="row"><label>機車</label><input id="motorcycle" type="number" step="0.0001"/></div>
+  <div class="row"><label>預設乘客數</label><input id="passengers" type="number" min="1" value="1"/></div>
+  <div class="row"><button id="save">儲存</button></div>
+</body>
+</html>
